@@ -1,8 +1,6 @@
 package com.ls.testentity.emun;
 
-import javax.naming.MalformedLinkException;
-
-public enum Gendar {
+public enum Gender {
     MALE,
     FEMALE,
     OTHER
