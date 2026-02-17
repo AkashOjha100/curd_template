@@ -2,7 +2,6 @@ package com.ls.testentity.service;
 
 
 import com.ls.testentity.entity.Info;
-import com.ls.testentity.entity.Register;
 import com.ls.testentity.model.InfoRequestDto;
 import com.ls.testentity.model.InfoResponseDto;
 import com.ls.testentity.repository.InfoRepository;
@@ -53,6 +52,7 @@ public class InfoService {
 
     }
 
+    //SOFT DELETE ACCESS BY ID
     public void remove(Long id){
         infoRepository.deleteById(id);
     }

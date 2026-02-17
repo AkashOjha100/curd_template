@@ -14,4 +14,5 @@ public class RegisterResponseDto {
     private String username;
     private String email;
     private Long phone_no;
+    //private String token;
 }

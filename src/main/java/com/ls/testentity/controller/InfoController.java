@@ -2,13 +2,9 @@ package com.ls.testentity.controller;
 
 import com.ls.testentity.model.InfoRequestDto;
 import com.ls.testentity.model.InfoResponseDto;
-import com.ls.testentity.model.RegisterRequestDto;
-import com.ls.testentity.model.RegisterResponseDto;
 import com.ls.testentity.service.InfoService;
-import com.ls.testentity.service.RegisterService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +17,12 @@ import java.util.List;
 public class InfoController {
 
     private final InfoService infoService;
-    private final RegisterService registerService;
 
     @GetMapping
     public ResponseEntity<List<InfoResponseDto>> getAllInformation(){
         return ResponseEntity.ok(infoService.getAllInformation());
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<InfoResponseDto> getInformationById(@PathVariable Long id){
         return ResponseEntity.ok(infoService.getInformationById(id));

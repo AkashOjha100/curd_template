@@ -6,6 +6,7 @@ import com.ls.testentity.model.RegisterResponseDto;
 import com.ls.testentity.repository.RegisterRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Component
 public class RegisterService {
 
     private final RegisterRepository registerRepository;
@@ -38,7 +40,7 @@ public class RegisterService {
             //Register saved = registerRepository.save(register);
         }
         List<Register> savedRegister=registerRepository.saveAll(registers);
-
+        System.out.println("Total number of insertion is :"+count);
         List<RegisterResponseDto>responseList =new ArrayList<>();
         for(Register register:savedRegister){
             RegisterResponseDto responseDto=new RegisterResponseDto(
@@ -64,7 +66,7 @@ public class RegisterService {
     }
 
     //------->GET DETAIL USING ID<--------
-    public RegisterResponseDto getDetailsByid(Long id){
+    public RegisterResponseDto getDetailsById(Long id){
         Register register=registerRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Register Not found by this id :"+id));
         return convertToResponseDto(register);
@@ -96,7 +98,8 @@ public class RegisterService {
         return convertToResponseDto(updatedRegister);
     }
 
-    public void deleteById(Long id){
+    //-------->SOFT DELETE ACCESS BY ID<---------
+    public void remove(Long id){
         registerRepository.deleteById(id);
     }
 }
