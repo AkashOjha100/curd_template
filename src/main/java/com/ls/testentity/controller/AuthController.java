@@ -23,7 +23,7 @@ public class AuthController {
 
     private final RegisterService registerService;
     private final AuthenticationManager authenticationManager;
-    //private final JwtService jwtService;
+    private final JwtService jwtService;
     private final AuthService authService;
 
     @PostMapping("/login")
