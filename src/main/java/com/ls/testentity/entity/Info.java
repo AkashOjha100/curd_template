@@ -1,6 +1,5 @@
 package com.ls.testentity.entity;
 
-//import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.ls.testentity.emun.Gender;
 import jakarta.persistence.*;
 import lombok.Getter;

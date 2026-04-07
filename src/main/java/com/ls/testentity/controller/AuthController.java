@@ -5,13 +5,9 @@ import com.ls.testentity.model.LoginResponseDto;
 import com.ls.testentity.model.RegisterRequestDto;
 import com.ls.testentity.model.RegisterResponseDto;
 import com.ls.testentity.service.AuthService;
-import com.ls.testentity.service.JwtService;
 import com.ls.testentity.service.RegisterService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +18,6 @@ import java.util.List;
 public class AuthController {
 
     private final RegisterService registerService;
-    private final AuthenticationManager authenticationManager;
-    private final JwtService jwtService;
     private final AuthService authService;
 
     @PostMapping("/login")
