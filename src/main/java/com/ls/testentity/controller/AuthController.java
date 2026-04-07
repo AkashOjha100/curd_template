@@ -6,13 +6,13 @@ import com.ls.testentity.model.RegisterRequestDto;
 import com.ls.testentity.model.RegisterResponseDto;
 import com.ls.testentity.service.AuthService;
 import com.ls.testentity.service.RegisterService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/auth/ino")
 @RestController
 public class AuthController {
